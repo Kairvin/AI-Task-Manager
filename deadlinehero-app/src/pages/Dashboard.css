@@ -1,0 +1,128 @@
+/* ===================================================================
+   STATS GRID (Dashboard)
+   =================================================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon.purple {
+  background: var(--primary-fixed);
+  color: var(--primary);
+}
+
+.stat-icon.green {
+  background: var(--color-success-dim);
+  color: var(--color-success);
+}
+
+.stat-icon.red {
+  background: var(--error-container);
+  color: var(--error);
+}
+
+.stat-icon.orange {
+  background: var(--color-warning-dim);
+  color: var(--color-warning);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--on-surface);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-label);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* ===================================================================
+   SECTION TITLES
+   =================================================================== */
+
+.section-title {
+  font-family: var(--font-label);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--on-surface-variant);
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--outline);
+  margin-top: 2px;
+}
+
+/* ===================================================================
+   AI SUGGESTION (Dashboard)
+   =================================================================== */
+
+.ai-suggestion {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface-container-high);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-suggestion::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(109, 94, 0, 0.05) 0%, transparent 100%);
+  z-index: 0;
+}
+
+.ai-suggestion-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--tertiary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-suggestion-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-surface);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}

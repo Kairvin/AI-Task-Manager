@@ -1,0 +1,197 @@
+/* ===================================================================
+   TASK CARD
+   =================================================================== */
+
+.task-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: none;
+  cursor: pointer;
+  transition: background var(--transition-normal);
+  position: relative;
+  margin: 0 -8px;
+  border-radius: var(--radius-lg);
+}
+
+.task-card:hover {
+  background: var(--surface-container-low);
+}
+
+.task-card-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  margin-top: 2px;
+  background: transparent;
+}
+
+.task-card-checkbox:hover {
+  border-color: var(--primary);
+}
+
+.task-card-checkbox.checked {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.task-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-card-title {
+  font-family: var(--font-headline);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 4px;
+}
+
+.task-card-title.completed {
+  text-decoration: line-through;
+  color: var(--on-surface-variant);
+}
+
+.task-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.task-card-priority {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  position: absolute;
+}
+
+.task-card-priority.critical {
+  background: var(--error);
+}
+
+.task-card-priority.high {
+  background: var(--primary);
+}
+
+.task-card-priority.medium {
+  background: var(--tertiary);
+}
+
+.task-card-priority.low {
+  background: var(--outline-variant);
+}
+
+/* Priority chips */
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.priority-badge.critical {
+  background: rgba(186, 26, 26, 0.1);
+  color: var(--error);
+}
+
+.priority-badge.high {
+  background: rgba(9, 76, 178, 0.1);
+  color: var(--primary);
+}
+
+.priority-badge.medium {
+  background: rgba(109, 94, 0, 0.1);
+  color: var(--tertiary);
+}
+
+.priority-badge.low {
+  background: var(--surface-container-highest);
+  color: var(--on-surface-variant);
+}
+
+/* ===================================================================
+   PROGRESS BAR
+   =================================================================== */
+
+.progress-bar-track {
+  height: 6px;
+  background: var(--surface-container-highest);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+/* ===================================================================
+   FORM INPUTS
+   =================================================================== */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--on-surface);
+  margin-bottom: 6px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--surface-container-lowest);
+  border: 1px solid rgba(195, 198, 213, 0.3);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-surface);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--outline);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}

@@ -1,0 +1,2 @@
+ALTER TABLE habits
+ADD COLUMN description text DEFAULT '';
