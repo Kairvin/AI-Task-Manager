@@ -1,16 +1,43 @@
-# React + Vite
+# Deadline Hero
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, AI-powered task management and team collaboration app featuring real-time workspaces, workload tracking, and daily habit monitoring.
 
-Currently, two official plugins are available:
+## Features
+- **Dynamic Team Workspaces**: Seamlessly switch between personal and team workloads.
+- **AI Task Prioritization**: Get intelligent suggestions on which tasks to tackle first.
+- **Daily Habit Tracking**: Monitor your recurring daily goals alongside your one-off tasks.
+- **Instant Invites**: Generate secure links to easily onboard new team members.
+- **Beautiful UI**: Glassmorphism design and smooth animations for a premium user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- **Frontend**: React, Vite
+- **Styling**: Custom Vanilla CSS with CSS Variables
+- **Backend/Database**: Supabase (PostgreSQL, Row Level Security, Edge Functions)
+- **Authentication**: Supabase Auth
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/deadlinehero-app.git
+   cd deadlinehero-app
+   ```
 
-## Expanding the ESLint configuration
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. **Set up environment variables:**
+   Rename `.env.example` to `.env` and fill in your Supabase and Gemini keys:
+   ```env
+   VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   VITE_SUPABASE_URL=your_supabase_project_url_here
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
