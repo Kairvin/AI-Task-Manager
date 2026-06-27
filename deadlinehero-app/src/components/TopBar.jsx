@@ -60,9 +60,18 @@ export default function TopBar({ onNewTask }) {
 
   return (
     <header className="topbar">
-      <div className="topbar-left">
-        <h1 className="topbar-title">{title}</h1>
-        <p className="topbar-subtitle">{subtitle}</p>
+      <div className="topbar-left" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <button 
+          className="icon-btn mobile-only" 
+          onClick={() => setSidebarOpen(true)}
+          style={{ display: 'none' }} // Hidden by default, shown via CSS on mobile
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: 24 }}>menu</span>
+        </button>
+        <div>
+          <h1 className="topbar-title">{title}</h1>
+          <p className="topbar-subtitle">{subtitle}</p>
+        </div>
       </div>
 
       <div className="topbar-right">

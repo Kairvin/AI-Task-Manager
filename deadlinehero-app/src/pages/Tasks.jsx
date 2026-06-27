@@ -61,8 +61,8 @@ export default function Tasks({ onEditTask }) {
     <div className="page-container animate-fade-in">
       
       {/* Filter Bar */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32, borderBottom: '1px solid var(--surface-container-high)', paddingBottom: 16 }}>
-        <div style={{ display: 'flex', gap: 32, fontFamily: 'var(--font-label)', fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32, borderBottom: '1px solid var(--surface-container-high)', paddingBottom: 16, flexWrap: 'wrap', gap: 16 }}>
+        <div style={{ display: 'flex', gap: 16, fontFamily: 'var(--font-label)', fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600, flexWrap: 'wrap' }}>
           {['all', 'ongoing', 'upcoming', 'done', 'overdue'].map(f => (
             <button
               key={f}
