@@ -549,7 +549,90 @@
 }
 
 @media (max-width: 768px) {
-  .landing-hero { flex-direction: column; text-align: center; padding-top: 60px; }
-  .landing-hero-left { display: flex; flex-direction: column; align-items: center; }
-  .landing-footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+  /* Navbar */
+  .landing-nav-inner {
+    padding: 0 20px;
+  }
+  .landing-nav-links a.nav-link {
+    display: none; /* Hide Features/Pricing links on very small screens to save space */
+  }
+
+  /* Hero Section */
+  .landing-hero { 
+    flex-direction: column; 
+    text-align: center; 
+    padding: 40px 20px 60px; 
+  }
+  .landing-hero-left { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  .landing-headline {
+    font-size: 32px;
+  }
+  .landing-hero-text {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .landing-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .landing-hero-buttons .btn-black-pill,
+  .landing-hero-buttons .btn-grey-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Problem Section */
+  .landing-problem {
+    padding: 60px 20px;
+  }
+  .landing-problem h2 {
+    font-size: 24px;
+  }
+
+  /* Features */
+  .landing-features {
+    padding: 60px 20px;
+  }
+  .landing-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .landing-features-header h2 {
+    font-size: 24px;
+  }
+
+  /* Testimonials & CTA */
+  .landing-social-proof {
+    padding: 60px 20px 40px;
+  }
+  .trusted-logos {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .testimonial-card {
+    padding: 32px 20px;
+  }
+  .landing-cta {
+    padding: 40px 20px 80px;
+  }
+  .landing-cta h2 {
+    font-size: 24px;
+  }
+
+  /* Footer */
+  .landing-footer {
+    padding: 32px 20px;
+  }
+  .landing-footer-inner { 
+    flex-direction: column; 
+    gap: 24px; 
+    text-align: center; 
+  }
+  .landing-footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
