@@ -47,6 +47,7 @@
 .task-card-body {
   flex: 1;
   min-width: 0;
+  word-wrap: break-word;
 }
 
 .task-card-title {

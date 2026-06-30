@@ -47,7 +47,7 @@ export default function Dashboard({ onEditTask }) {
             <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--primary)', display: 'inline-block' }} />
             Scholarly Progress
           </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 32 }}>
+          <div className="dashboard-stats-grid">
             <div>
               <p style={{ fontFamily: 'var(--font-display)', fontSize: 40, fontWeight: 700, color: 'var(--on-surface)', marginBottom: 4 }}>
                 {incomplete.length}

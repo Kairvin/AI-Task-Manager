@@ -17,18 +17,18 @@ export default function Calendar({ onEditTask, onNewTask }) {
   const upcomingTasks = tasks.filter(t => t.dueDate && new Date(t.dueDate) > new Date() && !t.completed).slice(0, 3);
 
   return (
-    <div className="page-container animate-fade-in" style={{ display: 'flex', gap: 40 }}>
+    <div className="page-container animate-fade-in calendar-layout">
       {/* Main Calendar Area */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         
         {/* Header */}
-        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, borderBottom: '1px solid var(--surface-container-high)', paddingBottom: 24 }}>
+        <header className="calendar-main-header">
           <div>
             <h1 style={{ fontFamily: 'var(--font-headline)', fontSize: 36, fontWeight: 700, color: 'var(--on-surface)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
               {MONTHS[currentDate.getMonth()]} {currentDate.getFullYear()}
             </h1>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <div className="calendar-header-actions">
             <div style={{ display: 'flex', background: 'var(--surface-container-low)', padding: 4, borderRadius: 'var(--radius-lg)' }}>
               <button onClick={() => setViewMode('month')} style={{ padding: '8px 16px', fontSize: 14, fontFamily: 'var(--font-label)', borderRadius: 'var(--radius-sm)', background: viewMode === 'month' ? 'var(--surface-container-lowest)' : 'transparent', color: viewMode === 'month' ? 'var(--on-surface)' : 'var(--on-surface-variant)', boxShadow: viewMode === 'month' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none', border: 'none', cursor: 'pointer' }}>Month</button>
               <button onClick={() => setViewMode('week')} style={{ padding: '8px 16px', fontSize: 14, fontFamily: 'var(--font-label)', borderRadius: 'var(--radius-sm)', background: viewMode === 'week' ? 'var(--surface-container-lowest)' : 'transparent', color: viewMode === 'week' ? 'var(--on-surface)' : 'var(--on-surface-variant)', boxShadow: viewMode === 'week' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none', border: 'none', cursor: 'pointer' }}>Week</button>
@@ -45,11 +45,13 @@ export default function Calendar({ onEditTask, onNewTask }) {
         </header>
 
         {/* Grid */}
-        <CalendarView onDayClick={setSelectedDay} currentDate={currentDate} viewMode={viewMode} />
+        <div className="calendar-grid-wrapper">
+          <CalendarView onDayClick={setSelectedDay} currentDate={currentDate} viewMode={viewMode} />
+        </div>
       </div>
 
       {/* Quick Schedule Sidebar */}
-      <aside style={{ width: 384, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 32 }}>
+      <aside className="calendar-sidebar">
         
         {selectedDay ? (
           <div className="glass-card" style={{ padding: 24, background: 'var(--surface-container-low)' }}>

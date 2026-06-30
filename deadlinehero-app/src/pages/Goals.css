@@ -26,6 +26,8 @@
 
 .annual-progression {
   margin-bottom: 64px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .section-heading {
@@ -47,25 +49,31 @@
   border-radius: var(--radius-xl);
   padding: 32px;
   box-shadow: inset 0 0 0 1px rgba(195, 198, 213, 0.15);
-  display: inline-block;
+  display: block;
   width: 100%;
-  overflow-x: auto;
+}
+
+.graph-scroll-wrapper {
+  width: 100%;
 }
 
 .graph-weeks {
   display: flex;
+  width: 100%;
   gap: 4px;
 }
 
 .graph-week {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 4px;
 }
 
 .graph-day {
-  width: 12px;
-  height: 12px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
   border-radius: 2px;
   background-color: var(--surface-container-high);
   transition: all 0.2s ease;
@@ -276,5 +284,47 @@
 @media (max-width: 1024px) {
   .goals-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .goals-page {
+    padding: 16px;
+  }
+  
+  .goals-title {
+    font-size: 28px;
+  }
+
+  .goals-header {
+    margin-bottom: 24px;
+  }
+  
+  .annual-progression {
+    margin-bottom: 32px;
+  }
+
+  .graph-container {
+    padding: 16px;
+  }
+
+  .graph-weeks {
+    gap: 1px;
+  }
+
+  .graph-week {
+    gap: 1px;
+  }
+
+  .graph-day {
+    border-radius: 1px;
+  }
+
+  .aspirations-list {
+    grid-template-columns: 1fr;
+  }
+
+  .aspiration-card {
+    padding: 16px;
   }
 }

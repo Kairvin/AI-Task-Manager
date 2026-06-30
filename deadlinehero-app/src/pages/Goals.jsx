@@ -93,23 +93,25 @@ export default function Goals() {
         <p className="section-subheading">Scholarly activity density over the past 12 months</p>
         
         <div className="graph-container">
-          <div className="graph-weeks">
-            {weeks.map((week, wIdx) => (
-              <div key={wIdx} className="graph-week">
-                {week.map((day) => (
-                  <div
-                    key={day.key}
-                    className={`graph-day level-${day.level}`}
-                    title={`${day.date.toLocaleDateString()} — ${Math.round(day.ratio * 100)}% complete`}
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
-          <div className="graph-months">
-            {displayMonths.map((m, i) => (
-              <span key={i}>{m}</span>
-            ))}
+          <div className="graph-scroll-wrapper">
+            <div className="graph-weeks">
+              {weeks.map((week, wIdx) => (
+                <div key={wIdx} className="graph-week">
+                  {week.map((day) => (
+                    <div
+                      key={day.key}
+                      className={`graph-day level-${day.level}`}
+                      title={`${day.date.toLocaleDateString()} — ${Math.round(day.ratio * 100)}% complete`}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="graph-months">
+              {displayMonths.map((m, i) => (
+                <span key={i}>{m}</span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -148,7 +150,7 @@ export default function Goals() {
             </div>
           )}
 
-        <div className="aspirations-grid">
+        <div className="aspirations-list">
           {filteredHabits.length === 0 ? (
             <div className="glass-card" style={{ gridColumn: '1 / -1', textAlign: 'center', padding: 48 }}>
               <span className="material-symbols-outlined" style={{ fontSize: 48, color: 'var(--outline)', marginBottom: 16 }}>target</span>
@@ -173,11 +175,11 @@ export default function Goals() {
                   <h3 className="aspiration-title">{habit.name}</h3>
                   <p className="aspiration-desc">{habit.desc || 'Consistently make progress towards this goal.'}</p>
                   
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 16 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 16, flexWrap: 'wrap', gap: 8 }}>
                     <button 
                       className={`btn btn-sm ${habitLog[todayKey]?.[habit.id] ? 'btn-primary' : 'btn-outline'}`}
                       onClick={() => toggleHabitDay(habit.id, todayKey)}
-                      style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+                      style={{ display: 'flex', alignItems: 'center', gap: 6, flex: '1 1 auto', justifyContent: 'center' }}
                     >
                       <CheckCircle2 size={16} /> {habitLog[todayKey]?.[habit.id] ? 'Completed Today' : 'Mark as Done'}
                     </button>

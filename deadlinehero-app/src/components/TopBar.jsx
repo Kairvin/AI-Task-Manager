@@ -20,7 +20,7 @@ const pageSubtitles = {
 
 export default function TopBar({ onNewTask }) {
   const location = useLocation();
-  const { tasks, setChatOpen, chatOpen, searchQuery, setSearchQuery } = useApp();
+  const { tasks, setChatOpen, chatOpen, searchQuery, setSearchQuery, setSidebarOpen } = useApp();
   const { user } = useAuth();
   const title = pageTitles[location.pathname] || 'Dashboard';
   const [alertOpen, setAlertOpen] = useState(false);
@@ -64,7 +64,6 @@ export default function TopBar({ onNewTask }) {
         <button 
           className="icon-btn mobile-only" 
           onClick={() => setSidebarOpen(true)}
-          style={{ display: 'none' }} // Hidden by default, shown via CSS on mobile
         >
           <span className="material-symbols-outlined" style={{ fontSize: 24 }}>menu</span>
         </button>

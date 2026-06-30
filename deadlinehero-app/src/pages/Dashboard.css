@@ -9,6 +9,19 @@
   margin-bottom: 24px;
 }
 
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .stat-card {
   display: flex;
   align-items: center;
